@@ -5,6 +5,6 @@ import 'package:flutter/material.dart';
 class HeadersPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(body: HeaderBordesRedondeados());
+    return Scaffold(body: HeaderTriangular());
   }
 }
