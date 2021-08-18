@@ -165,3 +165,51 @@ class _HeaderPicoPainter extends CustomPainter {
     return true;
   }
 }
+
+//=======================================================================================
+//==================DISEÑO DE HEADER CURVO===============================================
+//=======================================================================================
+class HeaderCurvo extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      height: double.infinity,
+      width: double.infinity,
+
+      child: CustomPaint(
+        painter: _HeaderCurvoPainter(),
+      ), //Colocación de un color hex, se coloca 0xff seguida del color
+    );
+  }
+}
+
+class _HeaderCurvoPainter extends CustomPainter {
+  @override
+  void paint(Canvas canvas, Size size) {
+    final paint = Paint();
+
+    //Propiedades
+    paint.color = Color(0xff615AAB);
+    paint.style = PaintingStyle
+        .fill; //.stroke son los bordes y el .fill es cuando se quiera rellenar
+    paint.strokeWidth = 20;
+    final path = new Path();
+
+    // Dibujar con el path y paint
+
+    path.lineTo(0, size.height * 0.25);
+    path.quadraticBezierTo(
+        size.width * 0.5, size.height * 0.5, size.width, size.height * 0.25);
+    path.lineTo(size.width, 0);
+
+    // Dibujar con el path y paint
+
+    canvas.drawPath(path, paint);
+  }
+
+  @override
+  bool shouldRepaint(covariant CustomPainter oldDelegate) {
+    // TODO: implement shouldRepaint
+    return true;
+  }
+}
