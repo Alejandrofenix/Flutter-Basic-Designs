@@ -1,4 +1,4 @@
-# designs_app
+# Designs headers with Flutter
 
 A new Flutter project.
 
